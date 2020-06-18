@@ -1,0 +1,70 @@
+@font-face {
+    font-family: "Kohinoor-Regular";
+    src: url("//db.onlinewebfonts.com/t/fb472d305ee243190d1b04659778dbcb.eot");
+    src: url("//db.onlinewebfonts.com/t/fb472d305ee243190d1b04659778dbcb.eot?#iefix") format("embedded-opentype"),
+         url("//db.onlinewebfonts.com/t/fb472d305ee243190d1b04659778dbcb.woff2") format("woff2"),
+         url("//db.onlinewebfonts.com/t/fb472d305ee243190d1b04659778dbcb.woff") format("woff"), 
+         url("//db.onlinewebfonts.com/t/fb472d305ee243190d1b04659778dbcb.ttf") format("truetype"), 
+         url("//db.onlinewebfonts.com/t/fb472d305ee243190d1b04659778dbcb.svg#Kohinoor") format("svg");
+}
+
+@font-face {
+    font-family: "AvenirNext-Thin";
+    src: url("//db.onlinewebfonts.com/t/c8a6828b90a1972fa94181b529016609.eot");
+    src: url("//db.onlinewebfonts.com/t/c8a6828b90a1972fa94181b529016609.eot?#iefix") format("embedded-opentype"),
+         url("//db.onlinewebfonts.com/t/c8a6828b90a1972fa94181b529016609.woff2") format("woff2"),
+         url("//db.onlinewebfonts.com/t/c8a6828b90a1972fa94181b529016609.woff") format("woff"),
+         url("//db.onlinewebfonts.com/t/c8a6828b90a1972fa94181b529016609.ttf") format("truetype"),
+         url("//db.onlinewebfonts.com/t/c8a6828b90a1972fa94181b529016609.svg#AvenirNextW05-Thin") format("svg");
+}
+
+body {
+    background-color: #f2f1ef;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:any-link {
+    color: #413f3d;
+}
+
+#menu-top {
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    font-family: Kohinoor-Regular;
+    text-align: center;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 15px 0px 10px;
+}
+
+#menu-top .logo {
+    font-size: .9em;
+    display: inline-block;
+    margin: auto;
+}
+
+#menu-top .navbar {
+    letter-spacing: .1em;
+    font-family: AvenirNext-Thin;
+    font-size: .4em;
+}
+
+#menu-top .navbar-links {
+    list-style: none;
+    padding-left: 0;
+    letter-spacing: .2em;
+}
+
+#menu-top .navbar-links > li {
+    display: inline-block;
+}
+
+#menu-top .navbar-links > li + li {
+    margin-left: 2em;
+}

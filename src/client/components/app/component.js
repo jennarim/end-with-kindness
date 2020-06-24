@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import clock from './../../public/clock.png';
 
 export default function App() {
     const [count, setCount] = useState(0);
@@ -36,6 +37,12 @@ export default function App() {
                 <div className="post-container">
                     <div className="post">
                         Cleaned up the streets with the whole neighborhood! #clean
+                        <div className="post-date">
+                            <a href="/post/cleaned-up-streets">
+                                Jan 24th 2020
+                            </a>
+                            <img src={clock} alt="Clock icon" className="clock"></img>
+                        </div>
                     </div>
                     <div className="post">
                         Found a stray cat alone in an alleyway, and brought her to the local animal shelter where she's recovering

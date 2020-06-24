@@ -23,14 +23,6 @@ body {
     margin: 0;
 }
 
-a {
-    text-decoration: none;
-}
-
-a:any-link {
-    color: #413f3d;
-}
-
 #menu-top {
     font-size: 2rem;
     letter-spacing: 0.05em;
@@ -48,6 +40,14 @@ a:any-link {
     font-size: .9em;
     display: inline-block;
     margin: auto;
+}
+
+#menu-top a {
+    text-decoration: none;
+}
+
+#menu-top a:any-link {
+    color: #413f3d;
 }
 
 #menu-top .navbar {
@@ -105,4 +105,28 @@ a:any-link {
     margin: 0 0 15px;
     box-sizing: border-box;
     border-radius: 9px;
+}
+
+.post-date {
+    font-weight: 100;
+    font-size: .8em;
+    padding: 15px 0 0 0;
+}
+
+.post-date a {
+    text-decoration: none;
+}
+
+.post-date a:any-link {
+    color: white;
+}
+
+.post-date a:hover {
+    text-decoration: underline;
+}
+
+.clock {
+    width: 14px;
+    margin-left: 10px;
+    vertical-align: top;
 }

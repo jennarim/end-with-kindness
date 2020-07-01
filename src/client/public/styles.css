@@ -105,6 +105,7 @@ body {
     margin: 0 0 15px;
     box-sizing: border-box;
     border-radius: 9px;
+    overflow: hidden;
 }
 
 .post-date {

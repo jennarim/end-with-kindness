@@ -11,7 +11,7 @@ class Act extends React.Component {
                 {act.content}
                 <div className="post-date">
                     <a href={act.url}>
-                        {act.date_posted}
+                        {act.datePosted}
                     </a>
                     <img src={clock} alt="Clock icon" className="clock"></img>
                 </div>
@@ -23,7 +23,7 @@ class Act extends React.Component {
 Act.propTypes = {
     content: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
-    date_posted: PropTypes.string.isRequired,
+    datePosted: PropTypes.string.isRequired,
 };
 
 export default Act;

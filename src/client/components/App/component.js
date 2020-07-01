@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import ActList from './../ActList/component.js';
 import DaysDisplay from '../DaysDisplay/component.js';
+import ActForm from '../ActForm/component.js';
 
 export default class App extends React.Component {
     state = {
@@ -13,9 +14,16 @@ export default class App extends React.Component {
     componentDidMount() {
         axios.get("api/acts")
             .then(res => {
-                const acts = res.data.acts;
+                console.log("axios:", res);
+                const acts = res.data;
                 this.setState({ acts });
             });
+    }
+
+    addNewAct = newAct => {
+        this.setState(prevState => ({
+            acts: [...prevState.acts, newAct]
+        }));
     }
 
     render() {
@@ -48,6 +56,8 @@ export default class App extends React.Component {
                     <DaysDisplay numberOfDays={2} />
 
                     <ActList acts={this.state.acts} />
+
+                    <ActForm onSubmit={this.addNewAct} />
 
                     <button onClick={() => this.setState({ count: this.state.count + 1 })}>{this.state.count}</button>
                 </div>

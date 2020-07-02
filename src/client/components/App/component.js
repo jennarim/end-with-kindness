@@ -16,13 +16,38 @@ export default class App extends React.Component {
             .then(res => {
                 console.log("axios:", res);
                 const acts = res.data;
+
+                // Get by most recent
+                acts.reverse();
                 this.setState({ acts });
+
+                // Reorder for left-to-right masonry order
+                const reordered = this.reorder(this.state.acts, 3);
+                this.setState({ acts: reordered });
             });
+    }
+
+    reorder = (arr, columns) => {
+        /*
+            Credit to: https://github.com/jessekorzan/masonry-css-js
+        */
+        const cols = columns;
+        const output = [];
+        let col = 0;
+        while (col < cols) {
+            for (let i = 0; i < arr.length; i += cols) {
+                let _val = arr[i + col];
+                if (_val !== undefined)
+                    output.push(_val);
+            }
+            col++;
+        }
+        return output;
     }
 
     addNewAct = newAct => {
         this.setState(prevState => ({
-            acts: [...prevState.acts, newAct]
+            acts: [newAct, ...prevState.acts]
         }));
     }
 

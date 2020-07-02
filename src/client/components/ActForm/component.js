@@ -18,7 +18,7 @@ export default class ActForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmitAct}>
+            <form onSubmit={this.handleSubmitAct} className="act-box-form">
                 <input
                     type="text"
                     value={this.state.content}

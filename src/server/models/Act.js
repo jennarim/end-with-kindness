@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const URLSlugs = require('mongoose-url-slugs');
-const { act } = require('react-test-renderer');
 
 const actSchema = Schema({
     content: {

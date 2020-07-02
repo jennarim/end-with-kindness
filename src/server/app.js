@@ -14,11 +14,6 @@ const HTML_FILE = path.join(DIST_DIR, 'index.html');
 
 mongoose.connect("mongodb://localhost/cdok", { useNewUrlParser: true, useUnifiedTopology: true });
 
-const mockResponse = {
-    foo: 'bar',
-    bar: 'foo'
-};
-
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(DIST_DIR));

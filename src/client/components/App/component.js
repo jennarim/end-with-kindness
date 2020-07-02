@@ -55,9 +55,12 @@ export default class App extends React.Component {
                 <div>
                     <DaysDisplay numberOfDays={2} />
 
-                    <ActList acts={this.state.acts} />
+                    <div className="post-container">
+                        <ActForm onSubmit={this.addNewAct} />
+                        <ActList acts={this.state.acts} />
+                    </div>
 
-                    <ActForm onSubmit={this.addNewAct} />
+
 
                     <button onClick={() => this.setState({ count: this.state.count + 1 })}>{this.state.count}</button>
                 </div>

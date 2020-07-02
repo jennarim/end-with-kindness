@@ -131,3 +131,25 @@ body {
     margin-left: 10px;
     vertical-align: top;
 }
+
+.act-box-form {
+    font-family: Kohinoor-Regular;
+    font-weight: 200;
+    letter-spacing: .03em;
+    background-color: white;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    margin: 0 0 15px;
+    box-sizing: border-box;
+    border-color: #c9c6ca;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 4px;
+}
+
+.act-box-form input[type="text"] {
+    border: none;
+    padding: 10px;
+}

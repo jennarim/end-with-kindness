@@ -6,9 +6,9 @@ export default class ActList extends React.Component {
     render() {
         const acts = this.props.acts;
         return (
-            <div className="post-container">
+            <>
                 {acts.map(act => <Act {...act} key={act.id} />)}
-            </div>
+            </>
         );
     }
 }

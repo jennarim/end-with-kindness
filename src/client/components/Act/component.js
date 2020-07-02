@@ -10,7 +10,7 @@ class Act extends React.Component {
             <div className="post">
                 {act.content}
                 <div className="post-date">
-                    <a href={act.url}>
+                    <a href={'/act/' + act.slug}>
                         {act.datePosted}
                     </a>
                     <img src={clock} alt="Clock icon" className="clock"></img>
@@ -22,8 +22,8 @@ class Act extends React.Component {
 
 Act.propTypes = {
     content: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
     datePosted: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired
 };
 
 export default Act;

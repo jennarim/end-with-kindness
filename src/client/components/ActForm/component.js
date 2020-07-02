@@ -12,6 +12,7 @@ export default class ActForm extends React.Component {
             content: this.state.content
         }).then(act => {
             this.props.onSubmit(act.data);
+            this.setState({ content: '' });
         });
     }
 

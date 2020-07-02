@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const URLSlugs = require('mongoose-url-slugs');
+const { act } = require('react-test-renderer');
 
 const actSchema = Schema({
     content: {
@@ -17,5 +19,7 @@ const actSchema = Schema({
         required: [true, '{PATH} is required.']
     }
 });
+
+actSchema.plugin(URLSlugs('content', { maxLength: 50 }));
 
 mongoose.model('Act', actSchema);

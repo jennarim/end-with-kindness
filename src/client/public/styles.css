@@ -79,7 +79,6 @@ body {
 }
 
 .day-number {
-    font-weight: bold;
     font-size: 3rem;
     font-weight: 350;
     letter-spacing: .2em;
@@ -132,9 +131,6 @@ body {
 }
 
 .act-box-form {
-    font-family: Kohinoor-Regular;
-    font-weight: 200;
-    letter-spacing: .03em;
     background-color: white;
     display: inline-block;
     width: 100%;
@@ -148,7 +144,23 @@ body {
     border-width: 4px;
 }
 
-.act-box-form input[type="text"] {
+.act-box-form textarea {
+    font-family: 'Gill Sans';
+    letter-spacing: .02em;
     border: none;
-    padding: 10px;
+    font-weight: 300;
+    font-size: 1em;
+    margin-bottom: 10px;
+    margin-right: 2px;
+    resize: vertical;
+    width: 100%;
+    max-height: 100%;
+}
+
+.act-box-form textarea:focus {
+    outline: none;
+}
+
+.act-box-form textarea::placeholder {
+    color: #c9c6ca;
 }

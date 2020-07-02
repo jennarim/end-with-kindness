@@ -22,8 +22,8 @@ export default class App extends React.Component {
                 this.setState({ acts });
 
                 // Reorder for left-to-right masonry order
-                const reordered = this.reorder(this.state.acts, 3);
-                this.setState({ acts: reordered });
+                // const reordered = this.reorder(this.state.acts, 3);
+                // this.setState({ acts: reordered });
             });
     }
 

@@ -19,12 +19,14 @@ export default class ActForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmitAct} className="act-box-form">
-                <input
+                <textarea
                     type="text"
-                    value={this.state.content}
+
                     onChange={event => this.setState({ content: event.target.value })}
                     placeholder="Continue the chain."
-                    required />
+                    required>
+                    {this.state.content}
+                </textarea>
                 <button>Submit</button>
             </form>
         );

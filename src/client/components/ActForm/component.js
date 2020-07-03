@@ -21,11 +21,10 @@ export default class ActForm extends React.Component {
             <form onSubmit={this.handleSubmitAct} className="act-box-form">
                 <textarea
                     type="text"
-
                     onChange={event => this.setState({ content: event.target.value })}
                     placeholder="Continue the chain."
+                    value={this.state.content}
                     required>
-                    {this.state.content}
                 </textarea>
                 <button>Submit</button>
             </form>

@@ -17,6 +17,17 @@ router.get('/api/acts', (req, res) => {
     });
 });
 
+router.get('/api/acts/:id', (req, res) => {
+    Act.findOne({ id: req.params.id }, (err, act) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('Sending', act);
+            res.json(act);
+        }
+    });
+});
+
 router.post('/act', async (req, res) => {
     console.log("got a post request, body:", req.body);
     const nextID = await Act.countDocuments({}) + 1;

@@ -58,7 +58,7 @@ export default class App extends React.Component {
                     <div className="container">
                         <a href="/" className="logo">
                             END WITH KINDNESS
-                    </a>
+                        </a>
                         <nav className="navbar">
                             <ul className="navbar-links">
                                 <li>

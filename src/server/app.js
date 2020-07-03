@@ -77,9 +77,14 @@ app.use('/', require('./routes/actsRoutes.js'));
     });
 */
 
-app.get('/', (req, res) => {
-    res.sendFile(HTML_FILE);
+app.get('*', (req, res) => {
+    res.sendFile(HTML_FILE, (err) => {
+        if (err) {
+            res.status(500).send(err);
+        }
+    });
 });
+
 
 app.listen(port, function () {
     console.log('App listening on port: ' + port);

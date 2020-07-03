@@ -17,8 +17,8 @@ router.get('/api/acts', (req, res) => {
     });
 });
 
-router.get('/api/acts/:id', (req, res) => {
-    Act.findOne({ id: req.params.id }, (err, act) => {
+router.get('/api/acts/:slug', (req, res) => {
+    Act.findOne({ slug: req.params.slug }, (err, act) => {
         if (err) {
             console.log(err);
         } else {

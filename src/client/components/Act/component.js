@@ -1,6 +1,7 @@
 import React from "react";
 import clock from './../../public/clock.png';
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 class Act extends React.Component {
 
@@ -10,9 +11,9 @@ class Act extends React.Component {
             <div className="post">
                 {act.content}
                 <div className="post-date">
-                    <a href={'/act/' + act.slug}>
+                    <Link to={'/act/' + act.slug}>
                         {act.datePosted}
-                    </a>
+                    </Link>
                     <img src={clock} alt="Clock icon" className="clock"></img>
                 </div>
             </div>

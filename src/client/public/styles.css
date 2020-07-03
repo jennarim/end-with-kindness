@@ -164,3 +164,25 @@ body {
 .act-box-form textarea::placeholder {
     color: #c9c6ca;
 }
+
+.static-page {
+    margin-left: 50px;
+    font-family: Kohinoor-Regular;
+    color: #413f3d;
+    
+}
+
+.page-title {
+    font-weight: normal;
+}
+
+.page-description {
+    font-weight: 100;
+    font-family: "Gill Sans";
+}
+
+.act-page {
+    margin-left: 50px;
+    margin-top: 40px;
+    border-radius: 0px;
+}

@@ -1,9 +1,14 @@
 import React from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import ActList from './../ActList/component.js';
-import DaysDisplay from '../DaysDisplay/component.js';
-import ActForm from '../ActForm/component.js';
+import DaysDisplay from './../DaysDisplay/component.js';
+import ActForm from './../ActForm/component.js';
+import About from './../About/component.js';
+import Ideas from './../Ideas/component.js';
+import Rules from './../Rules/component.js';
+import ActPage from './../ActPage/component.js';
 
 export default class App extends React.Component {
     state = {
@@ -54,42 +59,59 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <div id="menu-top">
-                    <div className="container">
-                        <a href="/" className="logo">
-                            END WITH KINDNESS
-                        </a>
-                        <nav className="navbar">
-                            <ul className="navbar-links">
-                                <li>
-                                    <a href="/">HOME</a>
-                                </li>
-                                <li>
-                                    <a href="/ideas">IDEAS</a>
-                                </li>
-                                <li>
-                                    <a href="/rules">RULES</a>
-                                </li>
-                                <li>
-                                    <a href="/about">ABOUT</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div>
-                    <DaysDisplay numberOfDays={2} />
-
-                    <div className="post-container">
-                        <ActForm onSubmit={this.addNewAct} />
-                        <ActList acts={this.state.acts} />
+                <Router>
+                    <div id="menu-top">
+                        <div className="container">
+                            <Link to="/" className="logo">
+                                END WITH KINDNESS
+                            </Link>
+                            <nav className="navbar">
+                                <ul className="navbar-links">
+                                    <li>
+                                        <Link to="/">HOME</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/ideas">IDEAS</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/rules">RULES</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/about">ABOUT</Link>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
 
+                    <Switch>
+                        <Route exact path="/">
+                            <div>
+                                <DaysDisplay numberOfDays={2} />
 
+                                <div className="post-container">
+                                    <ActForm onSubmit={this.addNewAct} />
+                                    <ActList acts={this.state.acts} />
+                                </div>
 
-                    <button onClick={() => this.setState({ count: this.state.count + 1 })}>{this.state.count}</button>
-                </div>
-            </div>
+                                <button onClick={() => this.setState({ count: this.state.count + 1 })}>{this.state.count}</button>
+                            </div>
+                        </Route>
+                        <Route path="/ideas">
+                            <Ideas />
+                        </Route>
+                        <Route path="/rules">
+                            <Rules />
+                        </Route>
+                        <Route path="/about">
+                            <About />
+                        </Route>
+                        <Route path="/act/:slug">
+                            <ActPage />
+                        </Route>
+                    </Switch>
+                </Router>
+            </div >
         );
     }
 }

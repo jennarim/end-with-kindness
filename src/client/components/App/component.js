@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { summary } from 'date-streaks';
 
 import ActList from './../ActList/component.js';
 import DaysDisplay from './../DaysDisplay/component.js';
@@ -9,10 +10,11 @@ import About from './../About/component.js';
 import Ideas from './../Ideas/component.js';
 import Rules from './../Rules/component.js';
 import ActPage from './../ActPage/component.js';
+import NavigationBar from './../NavigationBar/component.js';
 
 export default class App extends React.Component {
     state = {
-        count: 0,
+        // count: 0,
         acts: []
     }
 
@@ -56,45 +58,28 @@ export default class App extends React.Component {
         }));
     }
 
+    getConsecutiveDays() {
+        const dates = [...this.state.acts].map(act => act.datePosted);
+        console.log(summary({ dates }));
+        return summary({ dates }).currentStreak;
+    }
+
     render() {
         return (
             <div>
                 <Router>
-                    <div id="menu-top">
-                        <div className="container">
-                            <Link to="/" className="logo">
-                                END WITH KINDNESS
-                            </Link>
-                            <nav className="navbar">
-                                <ul className="navbar-links">
-                                    <li>
-                                        <Link to="/">HOME</Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/ideas">IDEAS</Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/rules">RULES</Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/about">ABOUT</Link>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-
+                    <NavigationBar />
                     <Switch>
                         <Route exact path="/">
                             <div>
-                                <DaysDisplay numberOfDays={2} />
+                                <DaysDisplay numberOfDays={this.getConsecutiveDays()} />
 
                                 <div className="post-container">
                                     <ActForm onSubmit={this.addNewAct} />
                                     <ActList acts={this.state.acts} />
                                 </div>
 
-                                <button onClick={() => this.setState({ count: this.state.count + 1 })}>{this.state.count}</button>
+                                {/* <button onClick={() => this.setState({ count: this.state.count + 1 })}>{this.state.count}</button> */}
                             </div>
                         </Route>
                         <Route path="/ideas">

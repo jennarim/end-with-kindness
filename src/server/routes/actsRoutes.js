@@ -1,6 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const moment = require('moment');
 
 const Act = mongoose.model('Act');
 
@@ -33,7 +32,7 @@ router.post('/act', async (req, res) => {
     const nextID = await Act.countDocuments({}) + 1;
     const newAct = new Act({
         content: req.body.content,
-        datePosted: moment().format('MMM Do YYYY hA'),
+        datePosted: new Date(),
         id: nextID
     });
     newAct.save((err, act) => {

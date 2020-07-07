@@ -10,7 +10,7 @@ const actSchema = Schema({
         maxlength: [1000, 'Should be less than 1000 characters']
     },
     datePosted: {
-        type: String,
+        type: Date,
         required: [true, '{PATH} is required.']
     },
     id: {

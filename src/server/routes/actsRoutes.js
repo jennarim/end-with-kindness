@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const Filter = require('bad-words'),
+    filter = new Filter();
 
 const Act = mongoose.model('Act');
 
@@ -31,7 +33,7 @@ router.post('/act', async (req, res) => {
     console.log("got a post request, body:", req.body);
     const nextID = await Act.countDocuments({}) + 1;
     const newAct = new Act({
-        content: req.body.content,
+        content: filter.clean(req.body.content),
         datePosted: new Date(),
         id: nextID
     });

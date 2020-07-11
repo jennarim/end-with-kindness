@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { summary } from 'date-streaks';
+import styled, { keyframes } from 'styled-components';
+import { fadeIn, fadeInDown } from 'react-animations';
 
 import ActList from './../ActList/component.js';
 import DaysDisplay from './../DaysDisplay/component.js';
@@ -11,6 +13,9 @@ import Ideas from './../Ideas/component.js';
 import Rules from './../Rules/component.js';
 import ActPage from './../ActPage/component.js';
 import NavigationBar from './../NavigationBar/component.js';
+
+const FadeInDown = styled.div`animation: 1s ${keyframes`${fadeInDown}`}`;
+const FadeIn = styled.div`animation: 1s ${keyframes`${fadeIn}`}`;
 
 export default class App extends React.Component {
     state = {
@@ -68,16 +73,23 @@ export default class App extends React.Component {
         return (
             <div>
                 <Router>
-                    <NavigationBar />
+                    <FadeInDown>
+                        <NavigationBar />
+                    </FadeInDown>
                     <Switch>
                         <Route exact path="/">
                             <div>
                                 <DaysDisplay numberOfDays={this.getConsecutiveDays()} />
 
-                                <div className="post-container">
-                                    <ActForm onSubmit={this.addNewAct} />
-                                    <ActList acts={this.state.acts} />
-                                </div>
+                                <FadeIn>
+                                    <div className="post-container">
+                                        <ActForm onSubmit={this.addNewAct} />
+
+                                        <ActList acts={this.state.acts} />
+
+                                    </div>
+                                </FadeIn>
+
 
                                 {/* <button onClick={() => this.setState({ count: this.state.count + 1 })}>{this.state.count}</button> */}
                             </div>

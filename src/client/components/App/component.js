@@ -19,8 +19,7 @@ const FadeIn = styled.div`animation: 1s ${keyframes`${fadeIn}`}`;
 
 export default class App extends React.Component {
     state = {
-        // count: 0,
-        acts: []
+        acts: [],
     }
 
     componentDidMount() {
@@ -84,9 +83,7 @@ export default class App extends React.Component {
                                 <FadeIn>
                                     <div className="post-container">
                                         <ActForm onSubmit={this.addNewAct} />
-
                                         <ActList acts={this.state.acts} />
-
                                     </div>
                                 </FadeIn>
 

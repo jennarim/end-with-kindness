@@ -186,3 +186,10 @@ body {
     margin-top: 40px;
     border-radius: 0px;
 }
+
+.toxic-message {
+    font-family: "Gill Sans";
+    color: mediumvioletred;
+    font-size: .8rem;
+    margin-bottom: 10px;
+}

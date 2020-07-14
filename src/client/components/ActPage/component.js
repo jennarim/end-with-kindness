@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from "react-router-dom";
 import axios from 'axios';
 import PropTypes from "prop-types";
+import moment from "moment";
 
 class ActPage extends React.Component {
     state = {
@@ -25,7 +26,7 @@ class ActPage extends React.Component {
             <div className="post act-page">
                 {this.state.act.content}
                 <div className="post-date">
-                    {this.state.act.datePosted}
+                    {moment(this.state.act.datePosted).format('MMM Do YYYY h:mmA')}
                 </div>
             </div>
         )

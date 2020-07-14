@@ -193,3 +193,8 @@ body {
     font-size: .8rem;
     margin-bottom: 10px;
 }
+
+.loading-spinner {
+    color: #c9c6ca;
+    margin-left: 5px;
+}

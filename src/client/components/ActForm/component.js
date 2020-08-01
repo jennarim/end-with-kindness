@@ -1,4 +1,4 @@
-/* global toxicity */
+// /* global toxicity */
 import React from 'react';
 import axios from 'axios';
 import PropTypes from "prop-types";
@@ -28,33 +28,36 @@ export default class ActForm extends React.Component {
 
     handleSubmitAct = event => {
         event.preventDefault();
-
-        const content = this.state.content.trim();
-        const formValid = this.state.formValid;
-
-        this.setState({ formValid: false, isLoading: true }, () => {
-            const threshold = 0.9;
-            const labelsToInclude = ['identity_attack', 'insult', 'threat'];
-            toxicity.load(threshold, labelsToInclude).then(model => {
-                model.classify(content).then(predictions => {
-
-                    const isToxic = predictions.some(prediction => prediction.results[0].match);
-                    if (isToxic) {
-                        console.log("TOXIC CONTENT. NOT SUBMIITED");
-                        this.setState({ isToxic: true });
-                    } else if (formValid) {
-                        this.setState({ isToxic: false }, () => {
-                            axios.post('/act', {
-                                content: content
-                            }).then(act => {
-                                this.props.onSubmit(act.data);
-                                this.setState({ content: '', isLoading: false });
-                            });
-                        });
-                    }
-                });
-            });
+        axios.post('/act', {
+            content: this.state.content
+        }).then(act => {
+            this.props.onSubmit(act.data);
+            this.setState({ content: '' });
         });
+
+        // this.setState({ formValid: false, isLoading: true }, () => {
+        //     const threshold = 0.9;
+        //     const labelsToInclude = ['identity_attack', 'insult', 'threat'];
+        //     toxicity.load(threshold, labelsToInclude).then(model => {
+        //         model.classify(content).then(predictions => {
+
+        //             const isToxic = predictions.some(prediction => prediction.results[0].match);
+        //             if (isToxic) {
+        //                 console.log("TOXIC CONTENT. NOT SUBMIITED");
+        //                 this.setState({ isToxic: true });
+        //             } else if (formValid) {
+        //                 this.setState({ isToxic: false }, () => {
+        //                     axios.post('/act', {
+        //                         content: content
+        //                     }).then(act => {
+        //                         this.props.onSubmit(act.data);
+        //                         this.setState({ content: '', isLoading: false });
+        //                     });
+        //                 });
+        //             }
+        //         });
+        //     });
+        // });
 
 
     }
@@ -71,7 +74,7 @@ export default class ActForm extends React.Component {
                     value={this.state.content}
                     required>
                 </textarea>
-                <ToxicMessage isToxic={this.state.isToxic} />
+                {/* <ToxicMessage isToxic={this.state.isToxic} /> */}
                 <input type="submit" value="Submit" disabled={!this.state.formValid} />
                 <LoadingSpinner isLoading={this.state.isLoading} />
             </form>

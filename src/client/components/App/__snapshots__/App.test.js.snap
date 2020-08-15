@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <BrowserRouter>
+    <styled.div>
+      <NavigationBar />
+    </styled.div>
+    <Switch>
+      <Route
+        exact={true}
+        path="/"
+      >
+        <div>
+          <DaysDisplay
+            numberOfDays={0}
+          />
+          <styled.div>
+            <div
+              className="post-container"
+            >
+              <ActForm
+                onSubmit={[Function]}
+              />
+              <ActList
+                acts={Array []}
+              />
+            </div>
+          </styled.div>
+        </div>
+      </Route>
+      <Route
+        path="/ideas"
+      >
+        <Ideas />
+      </Route>
+      <Route
+        path="/rules"
+      >
+        <Rules />
+      </Route>
+      <Route
+        path="/about"
+      >
+        <About />
+      </Route>
+      <Route
+        path="/act/:slug"
+      >
+        <withRouter(ActPage) />
+      </Route>
+    </Switch>
+  </BrowserRouter>
+</div>
+`;

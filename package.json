@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "npm run build && NODE_ENV=PRODUCTION node src/server/app.js",
+    "start": "NODE_ENV=PRODUCTION node src/server/app.js",
     "build": "webpack --mode production",
     "dev": "npm run dev-bundle && npm run start",
     "dev-server": "nodemon --exec babel-node src/server/app.js --ignore dist/",
     "dev-bundle": "webpack -w -d",
-    "heroku-prebuild": "npm install --dev"
+    "heroku-prebuild": "npm install --dev",
+    "heroku-postbuild": "webpack -p"
   },
   "keywords": [],
   "author": "",

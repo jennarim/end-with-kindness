@@ -9,7 +9,8 @@
     "build": "webpack --mode production",
     "dev": "npm run dev-bundle && npm run start",
     "dev-server": "nodemon --exec babel-node src/server/app.js --ignore dist/",
-    "dev-bundle": "webpack -w -d"
+    "dev-bundle": "webpack -w -d",
+    "heroku-prebuild": "npm install --dev"
   },
   "keywords": [],
   "author": "",

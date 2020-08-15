@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === 'PRODUCTION') {
 } else {
     const fs = require('fs');
     const path = require('path');
-    const fn = path.join(__dirname, '../config.json');
+    const fn = path.join(__dirname, '../../config.json');
 
     const data = fs.readFileSync(fn);
     const conf = JSON.parse(data);

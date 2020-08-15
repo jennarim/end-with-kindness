@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === 'PRODUCTION') {
 } else {
     const fs = require('fs');
     const path = require('path');
-    const fn = path.join(__dirname, 'config.json');
+    const fn = path.join(__dirname, '../../config.json');
 
     const data = fs.readFileSync(fn);
     const conf = JSON.parse(data);
@@ -15,7 +15,6 @@ if (process.env.NODE_ENV === 'PRODUCTION') {
     dbconf = conf.dbconf;
 }
 
-// mongoose.connect("mongodb://localhost/cdok", { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connect(dbconf, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("DB connected.");

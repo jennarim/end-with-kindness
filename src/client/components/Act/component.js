@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 
 class Act extends React.Component {
-
     formatDate(date) {
         return moment(date).format('MMM Do YYYY hA');
     }

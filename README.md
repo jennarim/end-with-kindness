@@ -14,11 +14,11 @@ Application is live [here](https://end-with-kindness.herokuapp.com/).
 * [Project Status](#project-status)
 
 ## Key Features
-* Post an act of kindness
+* Post an act of kindness  
 ![post](documentation/post.gif)
-* Global tracker that keeps track of consecutive days of postings
+* Global tracker that keeps track of consecutive days of postings  
 ![day-tracker](documentation/day-tracker.png)
-* Link to a specific post
+* Link to a specific post  
 ![link-post](documentation/link-post.png)
 
 ## Built with

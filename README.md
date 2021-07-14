@@ -26,8 +26,6 @@ Application is live [here](https://end-with-kindness.herokuapp.com/).
 * [MongoDB](https://www.mongodb.com/) - NoSQL Database
 * [React](https://reactjs.org) - JavaScript library for building user interfaces
 
-## Challenges
-
 ## Project Status
 This project is currently finished.
 

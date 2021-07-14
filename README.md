@@ -10,7 +10,6 @@ Application is live [here](https://end-with-kindness.herokuapp.com/).
 ## Table of Contents
 * [Key Features](#key-features)
 * [Built with](#built-with)
-* [Challenges](#challenges)
 * [Project Status](#project-status)
 
 ## Key Features
